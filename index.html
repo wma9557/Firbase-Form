@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  	<meta charset="UTF-8">
+  	<title>Login and Registration form</title>
+	  <link rel="stylesheet" href="css/stylesheeet.css">
+	
+</head>
+
+<body> 
+<div class="content">
+	<div class="container">
+		<img class="bg-img" src="images/bg.jpg" alt="bg">
+			<div class="menu">
+				<a href="#signIn" class="btn-signIn"><h2>SIGN IN</h2></a>
+				<a href="#signUp" class="btn-signUp active"><h2>SIGN UP</h2></a>
+			</div>
+			<div class="signIn">
+				<div class="contact-form">
+					<label>E-MAIL</label>
+					<input type="text" id="email">
+					
+					<label>PASSWORD</label>
+					<input type="text" id="password">
+					
+					<button class="submit" value="SIGN UP" id="signin">SIGN IN</button>
+				</div>
+				
+				<hr>
+				<a href="#"><h4>Forgot password?</h4></a>
+			</div>
+			
+			<div class="signUp active-section">
+				<div class="contact-form">
+					<label>E-MAIL</label>
+					<input type="text" id="email">	
+					
+					<label>PASSWORD</label>
+					<input type="text" id="password">
+					
+					<label>CONFIRM PASSWORD</label>
+					<input type="text" id="password_confirm">
+					
+					<button class="submit" value="SIGN UP" id="signup">SIGN UP</button>
+						
+				</div>
+			</div>
+			
+	</div>
+
+</div>
+
+
+<!-- link -->
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
+
+<script src='js/jquery.min.js'></script>
+<script  src="js/script.js"></script>
+<script>
+	var firebaseConfig = {
+		apiKey: "AIzaSyB42So1vt3jDIA0d2rpJRrae9jBuQj2y3o",
+		authDomain: "webform-25b14.firebaseapp.com",
+		databaseURL: "https://webform-25b14.firebaseio.com",
+		projectId: "webform-25b14",
+		storageBucket: "",
+		messagingSenderId: "680746689855",
+		appId: "1:680746689855:web:bb02e8f9700a0fb6055f8a"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+
+
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			window.location.href = "pages/form.html";
+		} 
+		else {
+
+		}
+	});
+</script>
+
+</body>
+</html>
